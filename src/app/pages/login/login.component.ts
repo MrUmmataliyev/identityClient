@@ -21,13 +21,14 @@ authService=inject(AuthService)
 decodedToken: any | null;
 tokenKey = 'token'
 roles: string[] = [];
+say!:string[];
 login(){
   this.authService.login(this.form.value).subscribe(
     {
       next: (response)=>{
         this.decodedToken = jwtDecode(localStorage.getItem(this.tokenKey)!)
-
-
+        
+          
           if(this.decodedToken.role=='Admin'){
             console.log("EEEEEEE")
             this.router.navigate(['/users'])
