@@ -10,7 +10,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { provideRouter, RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
@@ -22,10 +21,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { UsersComponent } from './admin/users/users.component';
 import { StudentsComponent } from './admin/students/students.component';
+import { CreateUserComponent } from './pages/create-user/create-user.component';
 
 
 
@@ -38,9 +39,10 @@ import { StudentsComponent } from './admin/students/students.component';
     UsersComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    CreateUserComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,

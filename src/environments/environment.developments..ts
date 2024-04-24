@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://localhost:7298/api/'
+    apiUrl: 'https://auth.tohirjon.uz/api/'
 
 };

@@ -1,22 +1,20 @@
-<div class="h-screen flex items-center justify-center">
-    <form class="shadow-md rounded-md p-5 bg-white w-1/6" [formGroup]="form" (ngSubmit)="regist()">
+<div class="h-screen flex items-center justify-center" style="margin-top: 50px;">
+    <form class="shadow-md rounded-md p-5 bg-white w-1/6" [formGroup]="form" (ngSubmit)="register()">
       <div class="py-4">
         <h1 class="font-bold py-2">
-          Login
+          Register
         </h1>
         <h6 class="text-slate-600 text-base">
-          Login to your account
+          Create new account
         </h6>
       </div>
   
       <mat-form-field apperance="fill" class="w-full">
-        <mat-label>FullName</mat-label>
-        <input matInput placeholder="FullName" formControlName="fullName" />
-        <mat-icon matPrefix>email</mat-icon>
+        <mat-label>Full name</mat-label>
+        <input matInput placeholder="Name" formControlName="fullName"/>
+        <mat-icon matPrefix>account_circle</mat-icon>
       </mat-form-field>
-
       
-
       <mat-form-field apperance="fill" class="w-full">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email" />
@@ -32,38 +30,33 @@
         </mat-icon>
       </mat-form-field>
 
-
-
       <mat-form-field apperance="fill" class="w-full">
         <mat-label>Status</mat-label>
-        <input matInput placeholder="status" formControlName="status" />
-        <mat-icon matPrefix>email</mat-icon>
+        <input matInput placeholder="Status" formControlName="status" />
+        <mat-icon matPrefix>info</mat-icon>
       </mat-form-field>
-  
 
       <mat-form-field apperance="fill" class="w-full">
         <mat-label>Age</mat-label>
         <input matInput placeholder="Age" formControlName="age" />
-        <mat-icon matPrefix>email</mat-icon>
+        <mat-icon matPrefix>cake</mat-icon>
       </mat-form-field>
-
 
       <mat-form-field apperance="fill" class="w-full">
-        <mat-label>Role</mat-label>
-        <input matInput placeholder="role" formControlName="role" />
-        <mat-icon matPrefix>email</mat-icon>
+        <mat-label>Roles</mat-label>
+        <input matInput placeholder="Roles" formControlName="roles" />
+        <mat-icon matPrefix>supervisor_account</mat-icon>
       </mat-form-field>
-
-      <button (click)="regist()" type="submit" [disabled]="!form.valid"
-        class="w-full border border-slate-200 rounded-md disabled:bg-purple-400 py-2 px-3 bg-purple-700 text-white font-bold">
-        Submit
+  
+      <button type="submit" class="w-full border border-slate-200 rounded-md disabled:bg-purple-400 py-2 px-3 bg-purple-700 text-white font-bold">
+        Register
       </button>
   
       <div class="my-5">
         <span class="text-slate-600">
-          Already have an account?
+          Have an account?
         </span>
-        <a class="text-purple-700" routerLink="login">Register</a>
+        <a class="text-purple-700" routerLink="register">Login</a>
       </div>
     </form>
   </div>
