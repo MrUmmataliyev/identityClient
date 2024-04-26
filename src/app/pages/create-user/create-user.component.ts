@@ -4,6 +4,7 @@ import { RegisterRequest } from '../../interfaces/register-request';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-create-user',
@@ -13,8 +14,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CreateUserComponent implements OnInit {
   hide: boolean = true;
   form!: FormGroup;
+  title = 'identity-cient';
 
-  constructor( private service: AuthService, private router: Router, private fb: FormBuilder, private matSnackBar: MatSnackBar) { }
+
+  
+  constructor(private readonly translocoService: TranslocoService, private service: AuthService, private router: Router, private fb: FormBuilder, private matSnackBar: MatSnackBar) {
+    this.translocoService.translate('title')
+    this.translocoService.translate('form.firstName')
+   }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -26,7 +33,33 @@ export class CreateUserComponent implements OnInit {
       roles: []
     });
   }
-
+  public languagesList: 
+    Array<Record<'imgUrl' | 'code' | 'name' | 'shorthand', string>> = [
+    {
+      imgUrl: '/assets/images/English.png',
+      code: 'en',
+      name: 'English',
+      shorthand: 'ENG',
+    },
+    {
+      imgUrl: '/assets/images/russia.png',
+      code: 'ru',
+      name: 'Russian',
+      shorthand: 'RU',
+    },
+    {
+      imgUrl: '/assets/images/uzbekistan.png',
+      code: 'uz',
+      name: 'Uzbekistan',
+      shorthand: 'UZB',
+    },
+  ];
+  public changeLanguage(languageCode: string): void {
+    this.translocoService.setActiveLang(languageCode);
+    languageCode === 'fl'
+      ? (document.body.style.direction = 'rtl')
+      : (document.body.style.direction = 'ltr');
+  }
   register() {
     if (this.form.invalid) {
       return;

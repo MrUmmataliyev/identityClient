@@ -23,6 +23,8 @@ export class AuthService {
     return this.http.post<LoginResponse>(`${this.apiUrl}Users/Login`, data).pipe(
       map((response)=>{
         if(response.isSuccess){
+          console.log("Keldi")
+          console.log(response.token)
           localStorage.setItem(this.tokenKey, response.token)
         }
         this.router.navigate(['/register'])
@@ -33,5 +35,10 @@ export class AuthService {
   register(data1:RegisterRequest): Observable<RegisterResponse>{
     return this.http.post<RegisterResponse>(this.apiUrl+'Users/Regsiter', data1);
   }
+  logout(){
+    localStorage.setItem(this.tokenKey, '');
+  }
 
-}
+  
+  }
+

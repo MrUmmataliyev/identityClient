@@ -27,6 +27,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { UsersComponent } from './admin/users/users.component';
 import { StudentsComponent } from './admin/students/students.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
+import { TranslocoRootModule } from './transloco-root.module';
 
 
 
@@ -54,7 +55,8 @@ import { CreateUserComponent } from './pages/create-user/create-user.component';
     ReactiveFormsModule,
     MatSnackBarModule,
     RouterLink,
-    HttpClientModule
+    HttpClientModule,
+    TranslocoRootModule
   ],
   providers: [
     provideAnimationsAsync()
