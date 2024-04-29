@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatIconModule} from '@angular/material/icon';
+import { TopComponent } from './admin/users/top/top.component';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ButtonComponent } from './admin/users/button/button.component';
 import { provideRouter, RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -35,6 +37,8 @@ import { TranslocoRootModule } from './transloco-root.module';
 @NgModule({
   declarations: [
     AppComponent,
+    ButtonComponent,
+    TopComponent,
     NavbarComponent,
     StudentsComponent,
     UsersComponent,

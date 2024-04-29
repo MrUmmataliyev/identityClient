@@ -5,14 +5,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss'
 })
-export class ButtonComponent implements OnInit {
-  @Input() inputValue: string = '';
-  constructor(){ }
-  ngOnInit(): void {
-  }
-  @Output() inputValueChange = new EventEmitter<string>();
-  say='Hello Teacher';
-  PostData(){
-    this.inputValueChange.emit(this.say);
+export class ButtonComponent {
+  @Input() myText: string = '';
+  
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
   }
 }

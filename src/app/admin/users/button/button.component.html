@@ -1,1 +1,6 @@
-<button type="button" (click)="PostData()">Say</button>
+
+<h1>{{ myText }}</h1>
+
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>

@@ -6,12 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './top.component.scss'
 })
 export class TopComponent {
-  said: string = '';
+  txt = "Welcome"
 
+ items = ['Say', 'Hi', 'Hola', 'Bello'];
 
-  GetData(listen:string){
-    this.said =listen;
-  }
+ addItem(newItem: string) {
+   this.items.push(newItem);
+ }
 
 }
 
